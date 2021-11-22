@@ -2,13 +2,9 @@
 ScalableFinalAssignment
 
 Programmeringsprojekt IG-VG
-Status: Ej inlämnad
-Din identitet är synlig under rättning.
 
-Sista tidpunkt för inlämning: 5 dec 2021 23:55, 13 dagar kvar
 Du skall i denna uppgift skapa en tjänst som är skalbar. Uppgiften täcker punkt 4 i kursplanen. Bedömningsnivåerna är icke godkänt, godkänt och väl godkänt. Uppgiften består av två delar. Den första är att bygga en sökmotortjänst med Spring Boot som söker efter Lego teman (mer om det längre ned). Den andra delen handlar om att bygga en proxy som kan skala ut tjänsten med flera noder. Delarna beskrivs mer i detalj individuellt.
 
- 
 
  
 
