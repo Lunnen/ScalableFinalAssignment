@@ -14,7 +14,7 @@ public class LegoService {
     LegoRepo repository;
 
     public Collection<LegoObject> getAllLego() {
-        System.out.println("HEJ JAG VISAR ALLT");
+        System.out.println("=> KÖR NU GET ALL");
 
         return repository.getAllLego().stream()
                 .sorted(Comparator.comparingInt(LegoObject::getId)).collect(Collectors.toList());
@@ -23,7 +23,7 @@ public class LegoService {
 
     public Collection<LegoObject> getSearchedLego(String searchedText) {
 
-        System.out.println("HEJ JAG SÖKER");
+        System.out.println("=> HÄR SÖKS DET");
 
         return repository.getAllLego()
                 .stream()

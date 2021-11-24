@@ -10,9 +10,4 @@ public class LegoObject {
     String name;
     int parentId;
 
-    /*public Lego(int id, String name, int parentId) {
-        this.id = id;
-        this.name = name;
-        this.parentId = parentId;
-    }*/
 }

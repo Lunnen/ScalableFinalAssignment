@@ -15,18 +15,19 @@ public class LegoRepo {
 
     public LegoRepo() throws FileNotFoundException {
         this.legoList = new HashMap<>();
-        getDataFromFile();
+        readLegoFileInfo();
     }
 
     public Collection<LegoObject> getAllLego() {
         return legoList.values();
     }
 
-    public void getDataFromFile() throws FileNotFoundException {
+    public void readLegoFileInfo() throws FileNotFoundException {
         File file = new File("themes.csv");
 
         Scanner fileRead = new Scanner(file);
-        String textString = fileRead.nextLine(); // Skip first line
+        // Skip first row
+        String textString = fileRead.nextLine();
 
         while (fileRead.hasNextLine()) {
             textString = fileRead.nextLine();
@@ -35,11 +36,8 @@ public class LegoRepo {
             LegoObject lego = new LegoObject();
             lego.setId(Integer.parseInt(row[0]));
             lego.setName(row[1]);
-            if(row.length == 3) {
-                lego.setParentId(Integer.parseInt(row[2]));
-            } else {
-                lego.setParentId(0);
-            }
+            // Check if parentId exists, if not - set 0
+            lego.setParentId((row.length == 3) ? Integer.parseInt(row[2]) : 0);
 
             legoList.put(lego.getId(), lego);
         }
