@@ -51,7 +51,7 @@ public class Proxy {
         try {
             bootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
-                    .childHandler(new ProxyChannel(this))
+                    .childHandler(new Channels(this))
                     .bind(this.port).sync().channel().closeFuture().sync();
         } catch (Exception e) {
             e.printStackTrace();
